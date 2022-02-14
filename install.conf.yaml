@@ -1,0 +1,26 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/nvim/:
+        glob: true
+        path: nvim/*
+
+    ~/.zshenv: zshenv
+    ~/.config/zsh/.zshrc: zsh/zshrc
+    ~/.config/zsh/aliases.zsh: zsh/aliases.zsh
+    ~/.config/zsh/plugins.zsh: zsh/plugins.zsh
+    ~/.config/zsh/settings.zsh: zsh/settings.zsh
+    ~/.config/zsh/config: zsh/config
+    ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.zi/bin: zsh/zi
+
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+
+    ~/.config/fd/ignore: git/gitignore
+

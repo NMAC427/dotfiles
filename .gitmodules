@@ -1,0 +1,8 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "zsh/zi"]
+	path = zsh/zi
+	url = https://github.com/z-shell/zi.git
+	ignore = dirty
