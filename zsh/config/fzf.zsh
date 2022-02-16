@@ -29,7 +29,6 @@ fi
 # fzf-cd-widget: FZF_ALT_C_COMMAND, FZF_ALT_C_OPTS
 # fzf-history-widget: FZF_CTRL_R_OPTS
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # Auto-completion
 [[ $- == *i* ]] && source "$FZF_PREFIX/fzf/shell/completion.zsh" 2> /dev/null
