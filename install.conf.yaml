@@ -23,4 +23,4 @@
     ~/.gitignore: git/gitignore
 
     ~/.config/fd/ignore: git/gitignore
-
+    ~/.config/lf/lfrc: lf/lfrc

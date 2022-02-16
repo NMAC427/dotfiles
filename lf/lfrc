@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set drawbox
+set icons
+set ratios '2:2:3'
+set tabstop 4
+
+cmd open ${{
+	case $(file --mime-type "$f" -bL) in
+		text/*|application/json) $EDITOR "$f";;
+		*) open "$f";;
+	esac
+}}
+
+# define a custom 'delete' command
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ $ans = "y" ] && echo "$fx" | perl -p -e "s/\n/\0/;" | xargs -0 rm -i
+}}
+
+
+map <enter> shell
+map <c-n> cd ~
+
+cmd q quit
+map <c-c> quit
