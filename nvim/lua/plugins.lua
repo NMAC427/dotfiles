@@ -18,7 +18,10 @@ return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'          -- Packer can manage itself
   use 'dstein64/vim-startuptime'        -- Measure Startup Time
-  use 'nathom/filetype.nvim'            -- Faster Loading                  IN THE FUTURE, REPLACE WITH NVIM NATIVE IMPLEMENTATION: https://github.com/neovim/neovim/pull/16600
+  use {                                 -- Faster Loading                  IN THE FUTURE, REPLACE WITH NVIM NATIVE IMPLEMENTATION: https://github.com/neovim/neovim/pull/16600
+    'nathom/filetype.nvim',
+    config = "require('config.filetype')"
+  }
   use 'lewis6991/impatient.nvim'        -- Improve Startup Time
 
   -- Color Schemes
