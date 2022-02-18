@@ -24,3 +24,12 @@
 
     ~/.config/fd/ignore: git/gitignore
     ~/.config/lf/lfrc: lf/lfrc
+
+    ~/.config/iterm2/preferences: iterm
+
+- shell:
+    # Configure iTerm2 to load preferences from custom file
+    - command: defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string ~/.config/iterm2/preferences &&
+               defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true &&
+               defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -integer 2
+      description: Configure iTerm2
