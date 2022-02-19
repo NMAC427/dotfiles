@@ -24,6 +24,10 @@ return require('packer').startup(function(use)
   }
   use 'lewis6991/impatient.nvim'        -- Improve Startup Time
 
+  -- Plugin Development
+  -- use { '~/repos/guess-indent.nvim', config = function() require('guess-indent').setup() end }
+  -- use 'nvim-lua/plenary.nvim'
+
   -- Color Schemes
   use 'joshdick/onedark.vim'            -- Color scheme
   use 'olimorris/onedarkpro.nvim'       -- Color scheme
@@ -59,7 +63,13 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = "require('config.bufferline')",
   }
-  
+
+  -- Indentation style detection
+  use {
+    'NMAC427/guess-indent.nvim',
+    config = function () require("guess-indent").setup { auto_cmd = false } end
+  }
+
   -- better escape: Maps 'jk' in insert mode to <ESC>
   use {
     'max397574/better-escape.nvim',
