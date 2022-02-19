@@ -8,14 +8,14 @@ local options = {
   breakindent = true,               -- Indent wrapped lines
   scrolloff = 8,                    -- Keep cursor more centered
   sidescrolloff = 8,                -- Keep cursor more centered: horizontally
-  showtabline = 2,                  -- Always show tabline
+--showtabline = 2,                  -- Always show tabline
   colorcolumn = "80",               -- Highligh column 80
 
   -- BEHAVIORAL --
   ignorecase = true,                -- Case insensitive search unless /C or capital in search.
   smartcase = true,                 -- Override ignorecase if the search pattern contains capitals.
   smartindent = true,               -- Smart indenting
-  textwidth = 80,                   
+  textwidth = 80,                   -- Wrap text at width when reflowing
   mouse = "a",                      -- Enable mouse support
   clipboard = "unnamedplus",        -- Enable OS clipboard sync
   whichwrap = "b,s,<,>,[,]",        -- Make arrow keys wrap at end of line
