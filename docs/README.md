@@ -1,6 +1,4 @@
-# `Dotfiles`
-
-## Work in progress...
+## `Dotfiles` - `WIP`
 
 ### Quick Setup
 
@@ -15,11 +13,12 @@ cd ~/.dotfiles; ./install
 
 > Note that the install script is idempotent: it can safely be run multiple times.
 
-## Making Local Customizations
+### Making Local Customizations
 
 You can make local customizations for some programs by editing these files:
 
 * `git` : `~/.gitconfig_local`
 
-### References:
+## References
+
 - [Dotbot](../dotbot)
