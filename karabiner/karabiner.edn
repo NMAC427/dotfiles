@@ -1,0 +1,83 @@
+;; This file defines my karabiner configuration using a tool called Goku.
+;; To generate the karabiner.json file, run `goku` in your terminal.
+
+;; Goku: https://github.com/yqrashawn/GokuRakuJoudo
+;; edn spec https://github.com/edn-format/edn
+;;
+;; :!Ca is keycode :a and prefix a with !C
+;;
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | command + control + optional + shift (hyper)
+;;
+;; code for all this:
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/b9b334a187379f9bc8182ad59e2cca2a1789e9c0/src/karabiner_configurator/keys.clj#L68
+;;
+;; to understand better how modifiers work in karabiner
+;; karabiner definition of mandatory and optional
+;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+;;
+;; !  | mandatory
+;;                  modifier *has* to be present for event to occur
+;;                  modifier is removed in output (to event)
+;; #  | optional (single)
+;;                  one of the optional modifiers has to exist but not all
+;;                  only this modifier has to exist, combining with another won't work
+;;                  modifier is kept in output (to event)
+;; ## | optional any
+;;                  what you would expect, everything is tacked on
+;;
+;; need to prefix C T O S F with ! or #
+;;
+
+
+{
+ 
+ :devices {:mkpro [{:vendor_id 9494 :product_id 60}]
+           :x1_key [{:vendor_id 1452 :product_id 65535}]}
+
+ :profiles {:Default {:default true 
+                      :sim 100 
+                      :delay 500 
+                      :alone 500 
+                      :held 500}}
+
+ ;; Define applications
+ :applications {:vi-editors ["^com\\.apple\\.Terminal$" 
+                             "^com\\.googlecode\\.iterm2$"
+                             "^org\\.gnu\\.Emacs$"]}
+
+ ;; Main list of modifications
+ ;; [<from> <to>] or
+ ;; [<from> <to> <conditions>] or
+ ;; [<from> <to> <conditions> <other options>]
+ ;; <from> can be keywords defined in froms or keycodes without `{:not-from true}`
+ ;; <to> can be keywords defined in tos, keycodes without `{:not-to true}`, string (shell script)
+ ;; <conditions> can be keywords defined in layers, devices, applications
+ ;; <other options> {:other {:parameters {:to_delayed_action_delay_milliseconds 100 :basic.to_if_alone_timeout_milliseconds 500 :basic.to_if_held_down_threshold_milliseconds 250}} }
+ :main [{:des "Caps Lock to escape / control in terminal or emacs"
+         :rules [[:caps_lock :left_control :vi-editors {:alone :escape}]]}
+
+        {:des "PtrSc to alt"
+         :rules [[:f13 :right_option :x1_key]]}
+
+        {:des "Switch command with option"
+         :rules [:mkpro ;; only switch for non-internal keyboard
+                 [:##left_option :left_command]
+                 [:##left_command :left_option]
+                 [:##right_option :right_command]
+                 [:##right_command :right_option]]}
+
+        {:des "Mouse desktop switch"
+         :rules [[{:pkey :button5} :!Tleft_arrow]
+                 [{:pkey :button4} :!Tright_arrow]
+                 [{:pkey :button3} :mission_control]]}] ;; main 
+}

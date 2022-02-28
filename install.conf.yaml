@@ -25,6 +25,7 @@
     ~/.config/fd/ignore: git/gitignore
     ~/.config/lf/lfrc: lf/lfrc
 
+    ~/.config/karabiner.edn: karabiner/karabiner.edn
     ~/.config/iterm2/preferences: iterm
 
 - shell:
@@ -33,3 +34,5 @@
                defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true &&
                defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -integer 2
       description: Configure iTerm2
+    - command: goku
+      description: Configuring Karabiner
