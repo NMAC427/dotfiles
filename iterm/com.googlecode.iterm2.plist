@@ -4,6 +4,8 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>AlwaysAcceptFirstMouse</key>
+	<true/>
 	<key>ConvertTabDragToWindowDragForSolitaryTabInCompactOrMinimalTheme</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -922,7 +924,13 @@
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DismemberScrollView</key>
+	<false/>
+	<key>DoubleReportScrollWheel</key>
+	<false/>
 	<key>EnableAPIServer</key>
+	<true/>
+	<key>FastTrackpad</key>
 	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
@@ -950,7 +958,7 @@
 			<key>ASCII Ligatures</key>
 			<false/>
 			<key>Allow Title Reporting</key>
-			<false/>
+			<true/>
 			<key>Allow modifyOtherKeys</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
@@ -1025,13 +1033,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.92156862745098034</real>
+				<real>0.92438727617263794</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.37254901960784315</real>
+				<real>0.37254902720451355</real>
 				<key>Red Component</key>
-				<real>0.99215686274509807</real>
+				<real>0.99215686321258545</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
@@ -1129,26 +1137,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.75686274509803919</real>
+				<real>0.76078420877456665</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.81176470588235294</real>
+				<real>0.81176471710205078</real>
 				<key>Red Component</key>
-				<real>0.81176470588235294</real>
+				<real>0.81176477670669556</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.36470588235294116</real>
+				<real>0.3686273992061615</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.4392156862745098</real>
+				<real>0.44313716888427734</real>
 				<key>Red Component</key>
-				<real>0.45490196078431372</real>
+				<real>0.45882350206375122</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1246,15 +1254,15 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.042975425720214844</real>
+				<real>0.25</real>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.9268307089805603</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.70213186740875244</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -1321,6 +1329,17 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
+				<key>0x20-0x20000-0x31</key>
+				<dict>
+					<key>Action</key>
+					<integer>12</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string> </string>
+					<key>Version</key>
+					<integer>1</integer>
+				</dict>
 				<key>0x2d-0x40000</key>
 				<dict>
 					<key>Action</key>
@@ -1334,6 +1353,17 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x1e</string>
+				</dict>
+				<key>0x6e-0x80000-0x2d</key>
+				<dict>
+					<key>Action</key>
+					<integer>12</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string>~</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -1522,6 +1552,8 @@
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
+			<true/>
+			<key>Mouse Reporting allow mouse wheel</key>
 			<true/>
 			<key>Movement Keys Scroll Outside Interactive Apps</key>
 			<true/>
@@ -1843,6 +1875,8 @@
 	</array>
 	<key>OpenTmuxDashboardIfHiddenWindows</key>
 	<true/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -1875,6 +1909,12 @@
 	</dict>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<false/>
+	<key>Print In Black And White</key>
+	<true/>
+	<key>ScrollWheelAcceleration</key>
+	<real>1</real>
+	<key>SensitiveScrollWheel</key>
+	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>SoundForEsc</key>
@@ -1887,10 +1927,14 @@
 	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>ThrottleMetalConcurrentFrames</key>
+	<true/>
 	<key>TimeBetweenTips</key>
 	<real>86400</real>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseModernScrollWheelAccumulator</key>
+	<true/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
