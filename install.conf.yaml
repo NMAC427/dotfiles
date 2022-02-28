@@ -10,7 +10,7 @@
         glob: true
         path: nvim/*
 
-    ~/.zshenv: zshenv
+    ~/.zshenv: zsh/zshenv_bootstrap
     ~/.config/zsh/.zshrc: zsh/zshrc
     ~/.config/zsh/aliases.zsh: zsh/aliases.zsh
     ~/.config/zsh/plugins.zsh: zsh/plugins.zsh
