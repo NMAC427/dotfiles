@@ -25,14 +25,18 @@ function M.indent_blankline()
       "lsp-installer",
       "",
     },
-    buftype_exclude = { "terminal" },
+    buftype_exclude = { 
+      "terminal",
+      "help",
+    },
     show_trailing_blankline_indent = false,
     show_first_indent_level = false,
   }
 end
 
 function M.guess_indent()
-  require("guess-indent").setup()
+  require("guess-indent").setup {
+  }
 end
 
 function M.treesitter()
