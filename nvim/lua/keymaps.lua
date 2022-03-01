@@ -1,33 +1,28 @@
--- Import
-local utils = require("config.utils")
-local keymap = utils.keymap
+local map = require("utils").map
 
 -- Set leader to spaces
-keymap("", "<Space>", "<Nop>")
+map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- NORMAL MODE --
 -- Better Window Navigation
-keymap("n", "<C-h>", "<C-w>h")
-keymap("n", "<C-j>", "<C-w>j")
-keymap("n", "<C-k>", "<C-w>k")
-keymap("n", "<C-l>", "<C-w>l")
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- Buffer Navigation
-keymap("n", "L", ":bnext<CR>")
-keymap("n", "H", ":bprevious<CR>")
+map("n", "L", ":bnext<CR>")
+map("n", "H", ":bprevious<CR>")
 
 -- Swap Lines
-keymap("n", "<Leader>j", "<Esc>:m .+1<CR>==")
-keymap("n", "<Leader>k", "<Esc>:m .-2<CR>==")
-
+map("n", "<Leader>j", "<Esc>:m .+1<CR>==")
+map("n", "<Leader>k", "<Esc>:m .-2<CR>==")
 
 -- INSERT MODE --
 
-
 -- VISUAL MODE --
 -- Swap Lines
-keymap("v", "<Leader>j", ":m '>+1<CR>gv=gv")
-keymap("v", "<Leader>k", ":m '<-2<CR>gv=gv")
+map("v", "<Leader>j", ":m '>+1<CR>gv=gv")
+map("v", "<Leader>k", ":m '<-2<CR>gv=gv")

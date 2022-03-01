@@ -10,12 +10,11 @@ if not snip_status_ok then
   return
 end
 
-
 -- require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 --   פּ ﯟ   some other good icons
@@ -49,6 +48,10 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
+  completion = {
+    -- autocomplete = false,
+  },
+
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -68,14 +71,14 @@ cmp.setup {
     },
 
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<S-CR>"] = cmp.config.disable,  -- Shift enter shouldn't select anything
+    ["<S-CR>"] = cmp.config.disable, -- Shift enter shouldn't select anything
 
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         -- cmp.select_next_item()
-	cmp.confirm({ select = true })
+        cmp.confirm { select = true }
       elseif luasnip.expandable() then
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
@@ -136,5 +139,4 @@ cmp.setup {
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
-
 }
