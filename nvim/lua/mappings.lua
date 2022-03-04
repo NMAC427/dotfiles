@@ -7,6 +7,9 @@ local M = {}
 
 -- Essential mappings
 function M.misc()
+  -- Terminal mappings
+  map("t", "<C-\\><esc>", "<C-\\><C-N>")
+
   -- Add Packer commands because we are not loading it at startup
   cmd("silent! command PackerClean lua require('plugins') require('packer').clean()")
   cmd("silent! command PackerCompile lua require('plugins') require('packer').compile()")

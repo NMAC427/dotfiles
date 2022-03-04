@@ -216,6 +216,14 @@ local plugins = {
     end,
   },
 
+  {
+    "akinsho/toggleterm.nvim",
+    config = function ()
+      require("plugins/config/other").toggleterm()
+    end,
+    disable = not plugin_conf.enable.toggleterm,
+  },
+
   -- TODO: Fix
   { "NvChad/nvim-colorizer.lua" },
 

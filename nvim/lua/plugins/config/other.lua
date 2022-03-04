@@ -25,7 +25,7 @@ function M.indent_blankline()
       "lsp-installer",
       "",
     },
-    buftype_exclude = { 
+    buftype_exclude = {
       "terminal",
       "help",
     },
@@ -52,6 +52,14 @@ function M.treesitter()
       enable = true,
       disable = {},
     },
+  }
+end
+
+function M.toggleterm()
+  require("toggleterm").setup {
+    open_mapping = "<c-\\>\\",
+    direction = "float",
+    insert_mappings = false,
   }
 end
 

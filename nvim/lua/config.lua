@@ -57,6 +57,7 @@ M.plugins = {
     indent_blankline = true,
     lsp = true,
     startuptime = true,
+    toggleterm = true,
     treesitter = true,
   },
 }
