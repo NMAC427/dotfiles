@@ -133,6 +133,12 @@ local plugins = {
   },
 
   {
+    "f3fora/cmp-spell",
+    after = "nvim-cmp",
+    disable = not plugin_conf.enable.cmp,
+  },
+
+  {
     "hrsh7th/cmp-cmdline",
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,

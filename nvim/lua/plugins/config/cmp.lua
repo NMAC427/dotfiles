@@ -118,6 +118,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        spell = "[Spell]"
       })[entry.source.name]
       return vim_item
     end,
@@ -129,6 +130,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "spell" },
   },
 
   confirm_opts = {
@@ -140,3 +142,19 @@ cmp.setup {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
 }
+
+-- Use buffer source for `/`
+cmp.setup.cmdline("/", {
+  sources = {
+    { name = "buffer" },
+  },
+})
+
+-- Use cmdline & path source for ':'
+cmp.setup.cmdline(":", {
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
+})
