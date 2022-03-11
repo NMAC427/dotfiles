@@ -19,6 +19,11 @@ function M.better_escape()
   }
 end
 
+function M.gitsigns()
+  require("gitsigns").setup {
+  }
+end
+
 function M.indent_blankline()
   require("indent_blankline").setup {
     indentLine_enabled = 1,

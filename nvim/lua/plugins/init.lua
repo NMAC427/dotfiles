@@ -57,6 +57,18 @@ local plugins = {
     disable = not plugin_conf.enable.treesitter,
   },
 
+  -- GIT
+  {
+    "lewis6991/gitsigns.nvim",
+    setup = function()
+      require("utils").packer_lazy_load("gitsigns.nvim")
+    end,
+    config = function()
+      require("plugins.config.other").gitsigns()
+    end
+  },
+
+
   -- LSP
   {
     "neovim/nvim-lspconfig",
