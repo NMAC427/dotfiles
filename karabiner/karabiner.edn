@@ -76,8 +76,10 @@
                  [:##right_option :right_command]
                  [:##right_command :right_option]]}
 
-        {:des "Mouse desktop switch"
-         :rules [[{:pkey :button5} :!Tleft_arrow]
-                 [{:pkey :button4} :!Tright_arrow]
-                 [{:pkey :button3} :mission_control]]}] ;; main 
+        ; {:des "Mouse desktop switch"
+        ;  :rules [[{:pkey :button5} :!Tleft_arrow]
+        ;          [{:pkey :button4} :!Tright_arrow]
+        ;          [{:pkey :button3} :mission_control]]}
+
+  ] ;; main 
 }
