@@ -1,13 +1,12 @@
 local M = {}
 
 function M.autopairs()
-  require("nvim-autopairs").setup {
-  }
+  require("nvim-autopairs").setup {}
 
   -- If you want insert `(` after select function or method item
   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
   local cmp = require("cmp")
-  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 end
 
 function M.better_escape()
@@ -20,8 +19,11 @@ function M.better_escape()
 end
 
 function M.gitsigns()
-  require("gitsigns").setup {
-  }
+  require("gitsigns").setup {}
+end
+
+function M.guess_indent()
+  require("guess-indent").setup {}
 end
 
 function M.indent_blankline()
@@ -42,6 +44,7 @@ function M.indent_blankline()
     },
     buftype_exclude = {
       "terminal",
+      "nofile",
       "help",
     },
     show_trailing_blankline_indent = false,
@@ -49,8 +52,11 @@ function M.indent_blankline()
   }
 end
 
-function M.guess_indent()
-  require("guess-indent").setup {
+function M.toggleterm()
+  require("toggleterm").setup {
+    open_mapping = "<c-\\>\\",
+    direction = "float",
+    insert_mappings = false,
   }
 end
 
@@ -67,14 +73,6 @@ function M.treesitter()
       enable = true,
       disable = {},
     },
-  }
-end
-
-function M.toggleterm()
-  require("toggleterm").setup {
-    open_mapping = "<c-\\>\\",
-    direction = "float",
-    insert_mappings = false,
   }
 end
 

@@ -19,3 +19,11 @@ pcall(vim.cmd, [[ language messages en_US.UTF-8 ]])
 -- Set python provider to speed up loading
 -- vim.g.loaded_python_provider = 0
 -- vim.g.python3_host_prog = vim.env.HOME .. "/.venvs/nvim/bin/python3"
+
+--Defer loading shada until after startup
+local shadafile = vim.opt.shadafile
+vim.opt.shadafile = "NONE"
+vim.schedule(function()
+  vim.opt.shadafile = shadafile
+  vim.cmd([[ silent! rsh ]])
+end)

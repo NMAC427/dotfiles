@@ -7,8 +7,9 @@ end
 -- Load modules
 local modules = {
   "options",
-  "keymaps",
   "mappings",
+  "colorscheme",
+  "autocommands",
 }
 
 for _, module in ipairs(modules) do
@@ -22,13 +23,3 @@ for _, module in ipairs(modules) do
     mod.misc()
   end
 end
-
---
-
--- require "options"
--- require "keymaps"
--- require "mappings"
-require("colorscheme")
--- require "config/cmp"
--- require "lsp"
-require("autocommands")

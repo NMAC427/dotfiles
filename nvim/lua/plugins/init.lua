@@ -65,9 +65,8 @@ local plugins = {
     end,
     config = function()
       require("plugins.config.other").gitsigns()
-    end
+    end,
   },
-
 
   -- LSP
   {
@@ -166,9 +165,8 @@ local plugins = {
   },
 
   -- misc plugins
-
   {
-    "NMAC427/guess-indent.nvim",
+    "/Users/nicolas/repos/guess-indent.nvim",
     module = "guess-indent",
     event = "BufRead",
     config = function()
@@ -245,7 +243,7 @@ local plugins = {
 
   {
     "akinsho/toggleterm.nvim",
-    config = function ()
+    config = function()
       require("plugins/config/other").toggleterm()
     end,
     disable = not plugin_conf.enable.toggleterm,
