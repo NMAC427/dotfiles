@@ -49,6 +49,7 @@ M.misc = {
 M.plugins = {
   enable = {
     alpha = true,
+    autopairs = true,
     better_escape = true,
     bufferline = true,
     cmp = true,

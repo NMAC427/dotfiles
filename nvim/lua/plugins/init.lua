@@ -160,6 +160,15 @@ local plugins = {
   },
 
   {
+    "windwp/nvim-autopairs",
+    after = "nvim-cmp",
+    config = function()
+      require("plugins.config.other").autopairs()
+    end,
+    disable = not plugin_conf.enable.autopairs,
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
     config = function()
