@@ -24,14 +24,15 @@ M.options = {
   ignorecase = true,                -- Case insensitive search unless /C or capital in search.
   smartcase = true,                 -- Override ignorecase if the search pattern contains capitals.
   smartindent = true,               -- Smart indenting
-  textwidth = 0,                   -- Wrap text at width when reflowing
+  textwidth = 0,                    -- Wrap text at width when reflowing
   mouse = "a",                      -- Enable mouse support
-  -- selectmode = "mouse"
   clipboard = "unnamedplus",        -- Enable OS clipboard sync
   whichwrap = "b,s,<,>,[,]",        -- Make arrow keys wrap at end of line
   undofile = true,                  -- Save edit history to disk
   swapfile = true,                  -- Enable swap file
   updatetime = 300,                 -- Faster completion
+  splitright = true,                -- Window split behavior
+  splitbelow = true,                -- Window split behavior
 
 
   -- GUI SPECIFIC --
