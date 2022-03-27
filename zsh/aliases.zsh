@@ -2,6 +2,7 @@ alias source_zsh="source $ZDOTDIR/.zshrc"
 alias dotfiles_install="$HOME/dotfiles/install"
 
 alias vi="nvim"
+alias reveal="open -R"
 
 # LS Aliases
 alias l='ls -lFh'     #size,show type,human readable
