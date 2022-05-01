@@ -1,5 +1,4 @@
 local opt = vim.opt
-local g = vim.g
 
 local config = require("config")
 
@@ -17,8 +16,12 @@ vim.g.mapleader = misc.mapleader
 pcall(vim.cmd, [[ language messages en_US.UTF-8 ]])
 
 -- Set python provider to speed up loading
--- vim.g.loaded_python_provider = 0
--- vim.g.python3_host_prog = vim.env.HOME .. "/.venvs/nvim/bin/python3"
+vim.g.loaded_python_provider = 1
+vim.g.python3_host_prog = vim.env.HOME .. "/.venvs/nvim/bin/python3"
+
+-- Opt into neovim lua filetype implementation
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
 
 --Defer loading shada until after startup
 local shadafile = vim.opt.shadafile

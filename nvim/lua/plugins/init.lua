@@ -8,12 +8,6 @@ end
 local plugins = {
   { "lewis6991/impatient.nvim" },
   { "nvim-lua/plenary.nvim" },
-  {
-    "nathom/filetype.nvim",
-    config = function()
-      require("plugins.config.filetype").setup()
-    end,
-  },
 
   {
     "wbthomason/packer.nvim",
