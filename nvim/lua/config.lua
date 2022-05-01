@@ -18,6 +18,7 @@ M.options = {
   tabstop = 4,                      -- Default width of a tab
   softtabstop = 4,                  -- How much the tab key indents
   shiftwidth = 4,                   -- Reindent operations width
+  laststatus = 3,                   -- How to display the status (3 = global)
 
 
   -- BEHAVIORAL --
