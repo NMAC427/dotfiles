@@ -62,7 +62,23 @@ end
 
 function M.treesitter()
   require("nvim-treesitter.configs").setup {
-    ensure_installed = "maintained",
+    ensure_installed = {
+      "bash",
+      "c",
+      "css",
+      "cpp",
+      "dockerfile",
+      "html",
+      "javascript",
+      "json",
+      "kotlin",
+      "latex",
+      "lua",
+      "make",
+      "markdown",
+      "python",
+      "vim",
+    },
     sync_install = false,
     highlight = {
       enable = true,
