@@ -6,11 +6,10 @@ if not present then
 end
 
 local plugins = {
-  { "lewis6991/impatient.nvim" },
-  { "nvim-lua/plenary.nvim" },
+  ["lewis6991/impatient.nvim"] = {},
+  ["nvim-lua/plenary.nvim"] = {},
 
-  {
-    "wbthomason/packer.nvim",
+  ["wbthomason/packer.nvim"] = {
     event = "VimEnter",
     config = function()
       vim.defer_fn(function()
@@ -19,21 +18,18 @@ local plugins = {
     end,
   },
 
-  {
-    "kyazdani42/nvim-web-devicons",
+  ["kyazdani42/nvim-web-devicons"] = {
     event = "VimEnter",
   },
 
-  {
-    "nvim-lualine/lualine.nvim",
+  ["nvim-lualine/lualine.nvim"] = {
     after = "nvim-web-devicons",
     config = function()
       require("plugins.config.lualine").setup()
     end,
   },
 
-  {
-    "akinsho/bufferline.nvim",
+  ["akinsho/bufferline.nvim"] = {
     after = "nvim-web-devicons",
     config = function()
       require("plugins.config.bufferline").setup()
@@ -41,8 +37,7 @@ local plugins = {
     disable = not plugin_conf.enable.bufferline,
   },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
+  ["nvim-treesitter/nvim-treesitter"] = {
     event = "BufRead",
     run = ":TSUpdate",
     config = function()
@@ -52,8 +47,7 @@ local plugins = {
   },
 
   -- GIT
-  {
-    "lewis6991/gitsigns.nvim",
+  ["lewis6991/gitsigns.nvim"] = {
     setup = function()
       require("utils").packer_lazy_load("gitsigns.nvim")
     end,
@@ -63,8 +57,7 @@ local plugins = {
   },
 
   -- LSP
-  {
-    "neovim/nvim-lspconfig",
+  ["neovim/nvim-lspconfig"] = {
     module = "lspconfig",
     opt = true,
     setup = function()
@@ -81,8 +74,7 @@ local plugins = {
     disable = not plugin_conf.enable.lsp,
   },
 
-  {
-    "williamboman/nvim-lsp-installer",
+  ["williamboman/nvim-lsp-installer"] = {
     opt = true,
     setup = function()
       require("utils").packer_lazy_load("nvim-lsp-installer")
@@ -91,21 +83,18 @@ local plugins = {
   },
 
   -- cmp
-  {
-    "rafamadriz/friendly-snippets",
+  ["rafamadriz/friendly-snippets"] = {
     event = "InsertCharPre",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "L3MON4D3/LuaSnip",
+  ["L3MON4D3/LuaSnip"] = {
     after = "friendly-snippets",
     wants = "friendly-snippets",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
+  ["hrsh7th/nvim-cmp"] = {
     after = "LuaSnip",
     config = function()
       require("plugins.config.cmp")
@@ -113,45 +102,38 @@ local plugins = {
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/cmp-buffer",
+  ["hrsh7th/cmp-buffer"] = {
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/cmp-path",
+  ["hrsh7th/cmp-path"] = {
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "f3fora/cmp-spell",
+  ["f3fora/cmp-spell"] = {
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/cmp-cmdline",
+  ["hrsh7th/cmp-cmdline"] = {
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "saadparwaiz1/cmp_luasnip",
+  ["saadparwaiz1/cmp_luasnip"] = {
     after = "nvim-cmp",
     wants = "LuaSnip",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/cmp-nvim-lua",
+  ["hrsh7th/cmp-nvim-lua"] = {
     after = "nvim-cmp",
     disable = not plugin_conf.enable.cmp,
   },
 
-  {
-    "hrsh7th/cmp-nvim-lsp",
+  ["hrsh7th/cmp-nvim-lsp"] = {
     module = "cmp_nvim_lsp",
     wants = "nvim-cmp",
     after = "nvim-cmp",
@@ -159,8 +141,7 @@ local plugins = {
   },
 
   -- misc plugins
-  {
-    "/Users/nicolas/repos/guess-indent.nvim",
+  ["/Users/nicolas/repos/guess-indent.nvim"] = {
     module = "guess-indent",
     event = "BufRead",
     config = function()
@@ -169,8 +150,7 @@ local plugins = {
     disable = not plugin_conf.enable.guess_indent,
   },
 
-  {
-    "windwp/nvim-autopairs",
+  ["windwp/nvim-autopairs"] = {
     after = "nvim-cmp",
     config = function()
       require("plugins.config.other").autopairs()
@@ -178,8 +158,7 @@ local plugins = {
     disable = not plugin_conf.enable.autopairs,
   },
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
+  ["lukas-reineke/indent-blankline.nvim"] = {
     event = "BufRead",
     config = function()
       require("plugins.config.other").indent_blankline()
@@ -187,8 +166,7 @@ local plugins = {
     disable = not plugin_conf.enable.indent_blankline,
   },
 
-  {
-    "max397574/better-escape.nvim",
+  ["max397574/better-escape.nvim"] = {
     event = "InsertCharPre",
     config = function()
       require("plugins.config.other").better_escape()
@@ -196,14 +174,12 @@ local plugins = {
     disable = not plugin_conf.enable.better_escape,
   },
 
-  {
-    "dstein64/vim-startuptime",
+  ["dstein64/vim-startuptime"] = {
     cmd = "StartupTime",
     disable = not plugin_conf.enable.startuptime,
   },
 
-  {
-    "numToStr/Comment.nvim",
+  ["numToStr/Comment.nvim"] = {
     module = "Comment",
     setup = function()
       require("utils").packer_lazy_load("Comment.nvim")
@@ -214,8 +190,7 @@ local plugins = {
     disable = not plugin_conf.enable.comment,
   },
 
-  {
-    "goolord/alpha-nvim",
+  ["goolord/alpha-nvim"] = {
     after = "nvim-web-devicons",
     config = function()
       require("plugins/config/alpha").setup()
@@ -223,8 +198,7 @@ local plugins = {
     disable = not plugin_conf.enable.alpha,
   },
 
-  {
-    "nvim-telescope/telescope.nvim",
+  ["nvim-telescope/telescope.nvim"] = {
     module = "telescope",
     cmd = "Telescope",
     setup = function()
@@ -235,8 +209,7 @@ local plugins = {
     end,
   },
 
-  {
-    "akinsho/toggleterm.nvim",
+  ["akinsho/toggleterm.nvim"] = {
     config = function()
       require("plugins/config/other").toggleterm()
     end,
@@ -244,17 +217,23 @@ local plugins = {
   },
 
   -- TODO: Fix
-  { "NvChad/nvim-colorizer.lua" },
+  ["NvChad/nvim-colorizer.lua"] = {},
 
   -- TODO: Move
-  { "joshdick/onedark.vim" },
-  { "olimorris/onedarkpro.nvim" },
-  { "jeffkreeftmeijer/vim-dim" },
-  -- { "yuttie/comfortable-motion.vim" },
+  ["joshdick/onedark.vim"] = {},
+  ["olimorris/onedarkpro.nvim"] = {},
+  ["jeffkreeftmeijer/vim-dim"] = {},
+
 }
 
+-- Modify plugins table so that the key is contained in the value at index 1
+-- This is required for packer.
+for key, v in pairs(plugins) do
+  v[1] = key
+end
+
 return packer.startup(function(use)
-  for _, v in ipairs(plugins) do
+  for _, v in pairs(plugins) do
     use(v)
   end
 end)
