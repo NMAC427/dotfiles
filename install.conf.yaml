@@ -23,6 +23,9 @@
     ~/.gitignore: git/gitignore
 
     ~/.config/fd/ignore: git/gitignore
+    ~/.config/kitty/:
+        glob: true
+        path: kitty/*
     ~/.config/lf/lfrc: lf/lfrc
 
     ~/.config/karabiner.edn: karabiner/karabiner.edn
