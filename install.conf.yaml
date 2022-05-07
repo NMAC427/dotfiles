@@ -23,13 +23,14 @@
     ~/.gitignore: git/gitignore
 
     ~/.config/fd/ignore: git/gitignore
+    ~/.config/iterm2/preferences: iterm
+    ~/.config/karabiner.edn: karabiner/karabiner.edn
     ~/.config/kitty/:
         glob: true
         path: kitty/*
     ~/.config/lf/lfrc: lf/lfrc
+    ~/.config/tmux: tmux
 
-    ~/.config/karabiner.edn: karabiner/karabiner.edn
-    ~/.config/iterm2/preferences: iterm
 - shell:
     - command: sh iterm/install.sh
       description: Configuring iTerm
