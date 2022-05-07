@@ -35,3 +35,5 @@
       description: Configuring iTerm
     - command: goku
       description: Configuring Karabiner
+    - command: zsh -c "source '$HOME/.zi/bin/zi.zsh'; zi load z-shell/F-Sy-H; fast-theme $HOME/.config/zsh/config/fast_theme_overlay.ini"
+      description: Apply z-shell/F-Sy-H theme overlay
