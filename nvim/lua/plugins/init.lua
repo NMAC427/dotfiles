@@ -5,6 +5,16 @@ if not present then
   return false
 end
 
+-- Returns a path if it exists, else return fallback.
+local function local_with_fallback(path, fallback)
+  local e_path = vim.fn.expand(path)
+  if vim.fn.isdirectory(e_path) == 1 then
+    return e_path
+  else
+    return fallback
+  end
+end
+
 local plugins = {
   ["lewis6991/impatient.nvim"] = {},
   ["nvim-lua/plenary.nvim"] = {},
@@ -136,7 +146,7 @@ local plugins = {
   },
 
   -- misc plugins
-  ["/Users/nicolas/repos/guess-indent.nvim"] = {
+  [local_with_fallback("~/repos/guess-indent.nvim", "NMAC427/guess-indent.nvim")] = {
     module = "guess-indent",
     event = "BufRead",
     config = function()
