@@ -61,12 +61,7 @@ local plugins = {
     module = "lspconfig",
     opt = true,
     setup = function()
-      -- Lazy load at startup
-      vim.defer_fn(function()
-        require("packer").loader("nvim-lspconfig")
-        -- reload the current file so lsp actually starts for it
-        vim.cmd('if &ft == "packer" | echo "" | else | silent! e %')
-      end, 0)
+      require("utils").packer_lazy_load("nvim-lspconfig")
     end,
     config = function()
       require("lsp")
