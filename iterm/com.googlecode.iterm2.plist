@@ -214,13 +214,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.44313725829124451</real>
+				<real>0.49204409122467041</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16470588743686676</real>
+				<real>0.22489690780639648</real>
 				<key>Red Component</key>
-				<real>0.97254902124404907</real>
+				<real>1</real>
 			</dict>
 			<key>Background Color</key>
 			<dict>
@@ -1175,13 +1175,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.44313725829124451</real>
+				<real>0.49204409122467041</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16470588743686676</real>
+				<real>0.22489690780639648</real>
 				<key>Red Component</key>
-				<real>0.97254902124404907</real>
+				<real>1</real>
 			</dict>
 			<key>Application Keypad Allowed</key>
 			<true/>
@@ -1962,7 +1962,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
