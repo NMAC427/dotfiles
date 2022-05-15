@@ -28,6 +28,9 @@ fi
 # Load plugins. This is the most time consuming step
 source $ZDOTDIR/plugins.zsh
 
+# Make completion case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Load iTerm Integration; This is not very important so it can be placed towards the end of the file.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
