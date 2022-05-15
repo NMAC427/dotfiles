@@ -22,7 +22,7 @@ source $ZDOTDIR/settings.zsh
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Load plugins. This is the most time consuming step
@@ -32,7 +32,9 @@ source $ZDOTDIR/plugins.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Load iTerm Integration; This is not very important so it can be placed towards the end of the file.
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [[ -f $HOME/.iterm2_shell_integration.zsh ]] && [[ $LC_TERMINAL == iTerm2 ]]; then
+    source "$HOME/.iterm2_shell_integration.zsh"
+fi
 
 # Allow local customizations in the ~/.shell_local_after file
 if [ -f ~/.shell_local_after ]; then
