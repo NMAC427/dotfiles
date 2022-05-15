@@ -6,6 +6,7 @@ end
 
 -- Load modules
 local modules = {
+  "plugins",
   "options",
   "mappings",
   "colorscheme",

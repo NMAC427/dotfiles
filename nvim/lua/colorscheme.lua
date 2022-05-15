@@ -4,8 +4,8 @@ local cmd = vim.cmd
 vim.g.background = "dark"
 
 -- Check if terminal supports truecolor
-if os.getenv("COLORTERM") == "truecolor" then
-  local onedarkpro = require("onedarkpro")
+local od_present, onedarkpro = pcall(require, "onedarkpro")
+if os.getenv("COLORTERM") == "truecolor" and od_present then
 
   onedarkpro.setup {
     colors = {},
@@ -35,5 +35,5 @@ if os.getenv("COLORTERM") == "truecolor" then
 else
   -- Fall back to theme that supports 256 colors
   vim.g.onedark_terminal_italics = 1
-  cmd([[colorscheme onedark]])
+  cmd([[silent! colorscheme onedark]])
 end

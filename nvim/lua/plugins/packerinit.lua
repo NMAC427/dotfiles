@@ -4,6 +4,7 @@
 pcall(vim.cmd, [[packadd packer.nvim]])
 
 local present, packer = pcall(require, "packer")
+local did_bootstrap = not present
 
 if not present then
   local packer_path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
@@ -35,4 +36,4 @@ packer.init {
   compile_on_sync = true,
 }
 
-return packer
+return { did_bootstrap, packer }

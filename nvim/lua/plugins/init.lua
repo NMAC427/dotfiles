@@ -1,9 +1,5 @@
-local present, packer = pcall(require, "plugins.packerInit")
+local packer_bootstrap, packer = unpack(require("plugins.packerinit"))
 local plugin_conf = require("config").plugins
-
-if not present then
-  return false
-end
 
 -- Returns a path if it exists, else return fallback.
 local function local_with_fallback(path, fallback)
@@ -240,5 +236,9 @@ end
 return packer.startup(function(use)
   for _, v in pairs(plugins) do
     use(v)
+  end
+
+  if packer_bootstrap then
+    packer.sync()
   end
 end)
