@@ -212,7 +212,7 @@ local plugins = {
 
   ["akinsho/toggleterm.nvim"] = {
     config = function()
-      require("plugins/config/other").toggleterm()
+      require("plugins/config/toggleterm").setup()
     end,
     disable = not plugin_conf.enable.toggleterm,
   },

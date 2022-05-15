@@ -29,6 +29,9 @@ function M.misc()
   -- Clear Highlight
   map("n", "<Esc><Esc>", ":nohl<CR>")
 
+  -- ToggleTerm
+  map("n", "<leader>lg", ":LazyGit<CR>")
+
   -- INSERT MODE --
 
   -- VISUAL MODE --
@@ -40,12 +43,12 @@ function M.misc()
   map("t", "<C-\\><esc>", "<C-\\><C-N>")
 
   -- Add Packer commands because we are not loading it at startup
-  cmd("silent! command PackerClean lua require('plugins') require('packer').clean()")
-  cmd("silent! command PackerCompile lua require('plugins') require('packer').compile()")
-  cmd("silent! command PackerInstall lua require('plugins') require('packer').install()")
-  cmd("silent! command PackerStatus lua require('plugins') require('packer').status()")
-  cmd("silent! command PackerSync lua require('plugins') require('packer').sync()")
-  cmd("silent! command PackerUpdate lua require('plugins') require('packer').update()")
+  -- cmd("silent! command PackerClean lua require('plugins') require('packer').clean()")
+  -- cmd("silent! command PackerCompile lua require('plugins') require('packer').compile()")
+  -- cmd("silent! command PackerInstall lua require('plugins') require('packer').install()")
+  -- cmd("silent! command PackerStatus lua require('plugins') require('packer').status()")
+  -- cmd("silent! command PackerSync lua require('plugins') require('packer').sync()")
+  -- cmd("silent! command PackerUpdate lua require('plugins') require('packer').update()")
 end
 
 function M.telescope()

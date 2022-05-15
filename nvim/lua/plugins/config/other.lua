@@ -52,14 +52,6 @@ function M.indent_blankline()
   }
 end
 
-function M.toggleterm()
-  require("toggleterm").setup {
-    open_mapping = "<c-\\>\\",
-    direction = "float",
-    insert_mappings = false,
-  }
-end
-
 function M.treesitter()
   require("nvim-treesitter.configs").setup {
     ensure_installed = {
