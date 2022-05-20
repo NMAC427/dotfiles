@@ -1,0 +1,32 @@
+# Taps
+tap "homebrew/cask-fonts"
+
+# Command Line Tools
+brew "fzf"
+brew "lazygit"
+brew "nano"
+brew "neovim"
+brew "tmux"
+brew "tldr"
+
+# Applications
+cask "iterm2"
+cask "karabiner-elements"
+brew "yqrashawn/goku/goku"  # Helper for [Karabiner](https://github.com/yqrashawn/GokuRakuJoudo)
+cask "sublime-merge"
+cask "sublime-text"
+cask "tunnelblick"
+cask "usb-overdrive"
+
+# App Store
+brew "mas"
+# mas "AdGuard for Safari", id: 1440147259
+# mas "Spark", id: 1176895641
+# mas "Xcode", id: 497799835
+
+# Fonts
+cask "font-jetbrains-mono"
+cask "font-sauce-code-pro-nerd-font"
+
+# Custom Bottles / Casks
+cask "NMAC427/custom/eurkey"  # EurKEY Keyboard Layout

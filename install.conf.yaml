@@ -32,6 +32,8 @@
     ~/.config/tmux: tmux
 
 - shell:
+    - command: sh brew/install.sh
+      description: Install software using brew
     - command: sh iterm/install.sh
       description: Configuring iTerm
     - command: goku

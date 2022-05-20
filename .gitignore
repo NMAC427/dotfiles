@@ -2,3 +2,4 @@
 /.lsp
 
 kitty/kitty.conf.bak
+brew/Brewfile.lock.json
