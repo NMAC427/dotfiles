@@ -2,6 +2,8 @@
 tap "homebrew/cask-fonts"
 
 # Command Line Tools
+brew "ag"
+brew "bat"
 brew "fzf"
 brew "lazygit"
 brew "nano"
