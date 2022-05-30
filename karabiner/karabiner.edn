@@ -54,6 +54,7 @@
  :applications {:vi-editors ["^com\\.apple\\.Terminal$" 
                              "^com\\.googlecode\\.iterm2$"
                              "^net\\.kovidgoyal\\.kitty$"
+							 "^com\\.jetbrains\\.pycharm$"
                              "^org\\.gnu\\.Emacs$"]}
 
  ;; Main list of modifications
