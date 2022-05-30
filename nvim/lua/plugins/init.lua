@@ -217,6 +217,13 @@ local plugins = {
     disable = not plugin_conf.enable.toggleterm,
   },
 
+  -- language plugins
+  ["ziglang/zig.vim"] = {
+    ft = "zig",
+  },
+
+  ["bfontaine/Brewfile.vim"] = {},
+
   -- TODO: Fix
   ["NvChad/nvim-colorizer.lua"] = {},
 

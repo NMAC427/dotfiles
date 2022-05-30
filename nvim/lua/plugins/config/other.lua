@@ -70,6 +70,7 @@ function M.treesitter()
       "markdown",
       "python",
       "vim",
+      "zig",
     },
     sync_install = false,
     highlight = {
