@@ -92,6 +92,9 @@ local plugins = {
   ["L3MON4D3/LuaSnip"] = {
     after = "friendly-snippets",
     wants = "friendly-snippets",
+    config = function ()
+      require("plugins.config.luasnip-rc")
+    end,
     disable = not plugin_conf.enable.cmp,
   },
 
