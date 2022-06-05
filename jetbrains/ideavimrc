@@ -1,0 +1,12 @@
+set clipboard+=unnamedplus
+set clipboard+=ideaput
+
+set number
+set relativenumber
+
+"""  IdeaVim specific
+set ideajoin
+
+""" Plugins
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'

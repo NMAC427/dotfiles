@@ -23,6 +23,7 @@
     ~/.gitignore: git/gitignore
 
     ~/.config/fd/ignore: git/gitignore
+    ~/.config/ideavim/ideavimrc: jetbrains/ideavimrc
     ~/.config/iterm2/preferences: iterm
     ~/.config/karabiner.edn: karabiner/karabiner.edn
     ~/.config/kitty/:
