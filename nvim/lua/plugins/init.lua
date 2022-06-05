@@ -83,6 +83,10 @@ local plugins = {
     disable = not plugin_conf.enable.lsp,
   },
 
+  ["HallerPatrick/py_lsp.nvim"] = {
+    filetype = "python",
+  },
+
   -- cmp
   ["rafamadriz/friendly-snippets"] = {
     event = "InsertCharPre",
