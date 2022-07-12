@@ -4,10 +4,14 @@ tap "homebrew/cask-fonts"
 # Command Line Tools
 brew "ag"
 brew "bat"
+brew "direnv"
+brew "fd"
 brew "fzf"
+brew "htop"
 brew "lazygit"
 brew "nano"
 brew "neovim"
+brew "pfetch"
 brew "tmux"
 brew "tldr"
 
@@ -19,12 +23,7 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "tunnelblick"
 cask "usb-overdrive"
-
-# App Store
-brew "mas"
-# mas "AdGuard for Safari", id: 1440147259
-# mas "Spark", id: 1176895641
-# mas "Xcode", id: 497799835
+cask "authy"
 
 # Fonts
 cask "font-jetbrains-mono"

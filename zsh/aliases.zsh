@@ -1,5 +1,5 @@
 alias source_zsh="source $ZDOTDIR/.zshrc"
-alias dotfiles_install="$HOME/dotfiles/install"
+alias dotfiles_install="$DOTFILES_PATH/install"
 
 alias vi="nvim"
 reveal() { open -R "${1:-.}"; }

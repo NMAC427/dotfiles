@@ -1,6 +1,8 @@
 # User Settings #
 #################
 
+export DOTFILES_PATH="${0:A:h:h}"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -40,3 +42,7 @@ find -L $ZDOTDIR/config -type f -name '*.zsh' -print0 | sort -z |
 while IFS= read -r -d $'\0' line; do
 	source "$line"
 done
+
+# Hooks
+eval "$(direnv hook zsh)"
+

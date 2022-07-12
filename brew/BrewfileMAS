@@ -1,0 +1,6 @@
+# vim: set ft=brewfile:
+
+brew "mas"
+mas "AdGuard for Safari", id: 1440147259
+mas "Spark", id: 1176895641
+mas "Xcode", id: 497799835

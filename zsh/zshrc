@@ -10,13 +10,12 @@ if [ -f ~/.zshrc_local_before ]; then
     source ~/.zshrc_local_before
 fi
 
-
-pfetch
-
 # start_time=$(gdate +%s%3N)
 source $ZDOTDIR/settings.zsh
 # end_time=$(gdate +%s%3N)
 # echo "Settings: $(( end_time - start_time )) ms"
+
+pfetch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
