@@ -30,4 +30,5 @@ You can make local customizations for some programs by editing these files:
 
 - Set the zsh theme using `fasttheme {name}`.
 - Some tools might require Rosetta 2 to run. You can install it by running `softwareupdate --install-rosetta`.
+- For file syncing with unison, you must add a remote with the name `unison` in your ssh config. You can customize your config in the `~/Library/Application Support/Unison/custom.prf` file.
 

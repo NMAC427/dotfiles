@@ -14,6 +14,8 @@ brew "neovim"
 brew "pfetch"
 brew "tmux"
 brew "tldr"
+brew "unison"
+brew "autozimu/homebrew-formulas/unison-fsmonitor"
 
 # Applications
 cask "iterm2"

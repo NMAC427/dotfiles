@@ -32,12 +32,25 @@
     ~/.config/lf/lfrc: lf/lfrc
     ~/.config/tmux: tmux
 
+    ~/Library/Application Support/Unison/default.prf: unison/default.prf
+
+
 - shell:
     - command: sh brew/install.sh
       description: Install software using brew
+      stdout: true
+      stderr: true
     - command: sh iterm/install.sh
       description: Configuring iTerm
     - command: goku
       description: Configuring Karabiner
     - command: zsh -c "source '$HOME/.zi/bin/zi.zsh'; zi load z-shell/F-Sy-H; fast-theme $HOME/.config/zsh/config/fast_theme_overlay.ini"
       description: Apply z-shell/F-Sy-H theme overlay
+
+- shell:
+    - command: make -C unison install
+      description: Install unison
+    - command: 'cp -n unison/custom.prf $HOME/Library/Application\ Support/Unison/custom.prf || :'
+      description: Copy unison/custom.prf
+
+

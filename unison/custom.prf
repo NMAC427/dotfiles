@@ -1,0 +1,4 @@
+# Extend the default.prf base config
+
+# clientHostName = HOSTNAME
+path = Sync

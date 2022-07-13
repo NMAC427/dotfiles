@@ -1,0 +1,16 @@
+# Unison preferences file
+root = /Users/nicolas
+root = ssh://unison//data/nicolas
+
+# Files to sync
+include custom
+
+ignore = Name .DS_Store
+ignore = Name .Trash
+ignore = Name *.tmp
+ignore = Name *.dSYM
+ignore = Name UserInterfaceState.xcuserstate
+ignore = Name .venv
+
+atomic = Name .git
+
