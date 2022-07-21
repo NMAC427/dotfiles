@@ -11,6 +11,7 @@ export CLICOLOR=1
 export EDITOR=nvim
 
 export BAT_PAGER="less -RF"  # Enable scroll wheel support in bat
+export LANG="en_US.UTF-8"
 
 # ZSH options
 ## History
