@@ -4,6 +4,9 @@
 [core]
 	excludesfile = ~/.gitignore
 
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
+
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = ~/.gitconfig_local
