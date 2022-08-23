@@ -32,8 +32,15 @@
     ~/.config/lf/lfrc: lf/lfrc
     ~/.config/tmux: tmux
 
-    ~/Library/Application Support/Unison/default.prf: unison/default.prf
+    ~/.unison/common: unison/common
 
+- shell:
+    - command: make -C unison install
+      description: Install unison
+    - command: 'cp -n unison/default.prf $HOME/.unison/default.prf || :'
+      description: Copy unison/default.prf
+    - command: 'cp -n unison/custom $HOME/.unison/custom || :'
+      description: Copy unison/custom
 
 - shell:
     - command: sh brew/install.sh
@@ -46,11 +53,4 @@
       description: Configuring Karabiner
     - command: zsh -c "source '$HOME/.zi/bin/zi.zsh'; zi load z-shell/F-Sy-H; fast-theme $HOME/.config/zsh/config/fast_theme_overlay.ini"
       description: Apply z-shell/F-Sy-H theme overlay
-
-- shell:
-    - command: make -C unison install
-      description: Install unison
-    - command: 'cp -n unison/custom.prf $HOME/Library/Application\ Support/Unison/custom.prf || :'
-      description: Copy unison/custom.prf
-
 
