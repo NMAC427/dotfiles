@@ -1,4 +1,4 @@
-include = Sync
+path = Sync
 
 include common
 
