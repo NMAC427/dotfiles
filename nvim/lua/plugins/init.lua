@@ -178,6 +178,12 @@ local plugins = {
     disable = not plugin_conf.enable.better_escape,
   },
 
+  ["ggandor/leap.nvim"] = {
+    config = function()
+      require("leap").set_default_keymaps()
+    end,
+  },
+
   ["dstein64/vim-startuptime"] = {
     cmd = "StartupTime",
     disable = not plugin_conf.enable.startuptime,
