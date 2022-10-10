@@ -19,10 +19,6 @@ pcall(vim.cmd, [[ language messages en_US.UTF-8 ]])
 vim.g.loaded_python_provider = 1
 -- vim.g.python3_host_prog = vim.env.HOME .. "/.venvs/nvim/bin/python3"
 
--- Opt into neovim lua filetype implementation
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
-
 --Defer loading shada until after startup
 local shadafile = vim.opt.shadafile
 vim.opt.shadafile = "NONE"
