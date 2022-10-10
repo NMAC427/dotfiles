@@ -24,7 +24,7 @@ if os.getenv("COLORTERM") == "truecolor" and od_present then
       cursorline = true,
     },
 
-    hlgroups = {
+    highlights = {
       TabLine = { bg = "${bg_statusline}" },
       TabLineSel = { bg = "${highlight}", fg = "${black}", style = "bold" },
       TabLineFill = { bg = "${bg_statusline}" },

@@ -38,7 +38,7 @@ local function button(sc, txt, keybind)
     cursor = 5,
     width = 48,
     align_shortcut = "right",
-    hl = "TelescopePrompt",
+    hl_shortcut = "Keyword",
   }
 
   if keybind then
