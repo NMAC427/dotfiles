@@ -1,260 +1,80 @@
-local packer_bootstrap, packer = unpack(require("plugins.packerinit"))
-local plugin_conf = require("config").plugins
-
--- Returns a path if it exists, else return fallback.
-local function local_with_fallback(path, fallback)
+local function has_local_plugin(path)
   local e_path = vim.fn.expand(path)
   if vim.fn.isdirectory(e_path) == 1 then
     return e_path
-  else
-    return fallback
   end
+  return nil
 end
 
-local plugins = {
-  ["lewis6991/impatient.nvim"] = {},
-  ["nvim-lua/plenary.nvim"] = {},
+local config = require("config").plugins
 
-  ["wbthomason/packer.nvim"] = {
-    event = "VimEnter",
-    config = function()
-      vim.defer_fn(function()
-        require("plugins")
-      end, 250)
-    end,
+return {
+  "nvim-lua/plenary.nvim",
+  "nvim-tree/nvim-web-devicons",
+
+  {
+    "NMAC427/guess-indent.nvim",
+    dir = has_local_plugin("~/repos/guess-indent.nvim/"),
+    event = "BufReadPre",
+    cmd = "GuessIndent",
+    config = {},
+    enabled = require("config").plugins.enable.toggleterm,
   },
 
-  ["kyazdani42/nvim-web-devicons"] = {
-    event = "VimEnter",
-  },
-
-  ["nvim-lualine/lualine.nvim"] = {
-    after = "nvim-web-devicons",
-    config = function()
-      require("plugins.config.lualine").setup()
-    end,
-  },
-
-  ["akinsho/bufferline.nvim"] = {
-    after = "nvim-web-devicons",
-    config = function()
-      require("plugins.config.bufferline").setup()
-    end,
-    disable = not plugin_conf.enable.bufferline,
-  },
-
-  ["nvim-treesitter/nvim-treesitter"] = {
-    event = "BufRead",
-    run = ":TSUpdate",
-    config = function()
-      require("plugins.config.other").treesitter()
-    end,
-    disable = not plugin_conf.enable.treesitter,
-  },
-
-  -- GIT
-  ["lewis6991/gitsigns.nvim"] = {
-    setup = function()
-      require("utils").packer_lazy_load("gitsigns.nvim")
-    end,
-    config = function()
-      require("plugins.config.other").gitsigns()
-    end,
-  },
-
-  -- LSP
-  ["neovim/nvim-lspconfig"] = {
-    module = "lspconfig",
-    opt = true,
-    setup = function()
-      require("utils").packer_lazy_load("nvim-lspconfig")
-    end,
-    config = function()
-      require("lsp")
-    end,
-    disable = not plugin_conf.enable.lsp,
-  },
-
-  ["williamboman/nvim-lsp-installer"] = {
-    opt = true,
-    setup = function()
-      require("utils").packer_lazy_load("nvim-lsp-installer")
-    end,
-    disable = not plugin_conf.enable.lsp,
-  },
-
-  -- cmp
-  ["rafamadriz/friendly-snippets"] = {
+  {
+    "max397574/better-escape.nvim",
     event = "InsertCharPre",
-    disable = not plugin_conf.enable.cmp,
+    config = {
+      mapping = { "jk" },
+      timeout = vim.o.timeoutlen,
+      clear_empty_lines = false,
+      keys = "<Esc>",
+    },
+    enabled = config.enable.better_escape,
   },
 
-  ["L3MON4D3/LuaSnip"] = {
-    after = "friendly-snippets",
-    wants = "friendly-snippets",
-    config = function ()
-      require("plugins.config.luasnip-rc")
-    end,
-    disable = not plugin_conf.enable.cmp,
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    config = {},
+    enabled = config.enable.comment,
   },
 
-  ["hrsh7th/nvim-cmp"] = {
-    after = "LuaSnip",
-    config = function()
-      require("plugins.config.cmp")
-    end, -- TODO: make setup
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["hrsh7th/cmp-buffer"] = {
-    after = "nvim-cmp",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["hrsh7th/cmp-path"] = {
-    after = "nvim-cmp",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["f3fora/cmp-spell"] = {
-    after = "nvim-cmp",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["hrsh7th/cmp-cmdline"] = {
-    after = "nvim-cmp",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["saadparwaiz1/cmp_luasnip"] = {
-    after = "nvim-cmp",
-    wants = "LuaSnip",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["hrsh7th/cmp-nvim-lua"] = {
-    after = "nvim-cmp",
-    disable = not plugin_conf.enable.cmp,
-  },
-
-  ["hrsh7th/cmp-nvim-lsp"] = {
-    module = "cmp_nvim_lsp",
-    wants = "nvim-cmp",
-    after = "nvim-cmp",
-    disable = not (plugin_conf.enable.lsp and plugin_conf.enable.cmp),
-  },
-
-  -- misc plugins
-  [local_with_fallback("~/repos/guess-indent.nvim", "NMAC427/guess-indent.nvim")] = {
-    module = "guess-indent",
-    event = "BufRead",
-    config = function()
-      require("plugins.config.other").guess_indent()
-    end,
-    disable = not plugin_conf.enable.guess_indent,
-  },
-
-  ["windwp/nvim-autopairs"] = {
-    after = "nvim-cmp",
-    config = function()
-      require("plugins.config.other").autopairs()
-    end,
-    disable = not plugin_conf.enable.autopairs,
-  },
-
-  ["lukas-reineke/indent-blankline.nvim"] = {
-    event = "BufRead",
-    config = function()
-      require("plugins.config.other").indent_blankline()
-    end,
-    disable = not plugin_conf.enable.indent_blankline,
-  },
-
-  ["max397574/better-escape.nvim"] = {
-    event = "InsertCharPre",
-    config = function()
-      require("plugins.config.other").better_escape()
-    end,
-    disable = not plugin_conf.enable.better_escape,
-  },
-
-  ["ggandor/leap.nvim"] = {
+  {
+    "ggandor/leap.nvim",
+    event = "VeryLazy",
     config = function()
       require("leap").set_default_keymaps()
     end,
   },
 
-  ["dstein64/vim-startuptime"] = {
-    cmd = "StartupTime",
-    disable = not plugin_conf.enable.startuptime,
+  {
+    "windwp/nvim-spectre",
+    cmd = "Spectre",
   },
 
-  ["numToStr/Comment.nvim"] = {
-    module = "Comment",
-    setup = function()
-      require("utils").packer_lazy_load("Comment.nvim")
-    end,
-    config = function()
-      require("Comment").setup()
-    end,
-    disable = not plugin_conf.enable.comment,
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "BufReadPre",
   },
 
-  ["goolord/alpha-nvim"] = {
-    after = "nvim-web-devicons",
-    config = function()
-      require("plugins/config/alpha").setup()
-    end,
-    disable = not plugin_conf.enable.alpha,
-  },
+  -- Color Schemes
 
-  ["nvim-telescope/telescope.nvim"] = {
-    module = "telescope",
-    cmd = "Telescope",
-    setup = function()
-      require("mappings").telescope()
-    end,
-    config = function()
-      require("plugins/config/telescope").setup()
+  {
+    "olimorris/onedarkpro.nvim",
+    cond = function()
+      return os.getenv("COLORTERM") == "truecolor"
     end,
   },
 
-  ["akinsho/toggleterm.nvim"] = {
-    config = function()
-      require("plugins/config/toggleterm").setup()
+  {
+    "joshdick/onedark.vim",
+    cond = function()
+      return os.getenv("COLORTERM") ~= "truecolor"
     end,
-    disable = not plugin_conf.enable.toggleterm,
   },
 
-  -- language plugins
-  ["ziglang/zig.vim"] = {
-    ft = "zig",
-  },
+  -- File Types
 
-  ["bfontaine/Brewfile.vim"] = {},
-
-  -- TODO: Fix
-  ["NvChad/nvim-colorizer.lua"] = {},
-
-  -- TODO: Move
-  ["joshdick/onedark.vim"] = {},
-  ["olimorris/onedarkpro.nvim"] = {},
-  ["jeffkreeftmeijer/vim-dim"] = {},
-
+  "bfontaine/Brewfile.vim",
 }
-
--- Modify plugins table so that the key is contained in the value at index 1
--- This is required for packer.
-for key, v in pairs(plugins) do
-  v[1] = key
-end
-
-return packer.startup(function(use)
-  for _, v in pairs(plugins) do
-    use(v)
-  end
-
-  if packer_bootstrap then
-    packer.sync()
-  end
-end)

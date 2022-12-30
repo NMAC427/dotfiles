@@ -1,26 +1,14 @@
--- Impatient for faster lua loading
-local impatient_available, impatient = pcall(require, "impatient")
-if impatient_available then
-  impatient.enable_profile()
-end
-
--- Load modules
-local modules = {
-  "plugins",
-  "options",
-  "mappings",
-  "colorscheme",
-  "autocommands",
-}
-
-for _, module in ipairs(modules) do
+function load_module(module)
   local ok, mod = pcall(require, module)
   if not ok then
     error("Error loading module " .. module .. "\n\n" .. mod)
   end
-
-  -- Load essential key mappings
-  if module == "mappings" then
-    mod.misc()
-  end
+  return mod
 end
+
+load_module("options")
+load_module("mappings").misc()
+load_module("load_plugins")
+load_module("colorscheme")
+load_module("autocommands")
+load_module("filetype")

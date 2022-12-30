@@ -1,12 +1,7 @@
-local present, lualine = pcall(require, "lualine")
-if not present then
-  return
-end
-
-local M = {}
-
-function M.setup()
-  lualine.setup {
+return {
+  "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
+  config = {
     options = {
       icons_enabled = true,
       theme = "auto",
@@ -33,7 +28,5 @@ function M.setup()
     },
     tabline = {},
     extensions = {},
-  }
-end
-
-return M
+  },
+}

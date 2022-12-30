@@ -1,6 +1,6 @@
-vim.filetype.add({
+vim.filetype.add {
   extension = {
-    sk = 'sketch',
-    skh = 'sketch',
+    sk = "sketch",
+    skh = "sketch",
   },
-})
+}

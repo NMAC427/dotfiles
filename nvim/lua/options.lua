@@ -1,5 +1,4 @@
 local opt = vim.opt
-
 local config = require("config")
 
 -- Load options
@@ -14,7 +13,7 @@ vim.g.mapleader = misc.mapleader
 vim.g.maplocalleader = misc.maplocalleader
 
 -- Set language to en_US
-pcall(vim.cmd, [[ language messages en_US.UTF-8 ]])
+vim.cmd([[ language messages en_US.UTF-8 ]])
 
 -- Set python provider to speed up loading
 vim.g.loaded_python_provider = 1
