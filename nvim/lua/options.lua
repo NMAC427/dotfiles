@@ -11,6 +11,7 @@ end
 local misc = config.misc
 
 vim.g.mapleader = misc.mapleader
+vim.g.maplocalleader = misc.maplocalleader
 
 -- Set language to en_US
 pcall(vim.cmd, [[ language messages en_US.UTF-8 ]])

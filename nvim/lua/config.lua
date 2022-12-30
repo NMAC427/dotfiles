@@ -44,6 +44,7 @@ M.options = {
 
 M.misc = {
   mapleader = " ",
+  maplocalleader = ",",
 }
 
 -- PLUGIN OPTIONS --
