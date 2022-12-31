@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-  alpha = require("alpha")
+  local alpha = require("alpha")
 
   local ascii = {
     "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
@@ -61,13 +61,14 @@ function M.config()
     type = "group",
     val = {
       button("e", "  New File  ", ":ene<CR>"),
-      button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
+      button("SPC f b", "  File Browser  ", ":Telescope file_browser<CR>"),
+      button("SPC f f", "  Find File", ":Telescope find_files<CR>"),
       button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
       button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
       button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
       -- button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
       button("SPC e s", "  Settings", ":e $MYVIMRC | :setlocal path+=./lua | :cd %:p:h <CR>"),
-      button("SPC e d", "  Dotfiles", ":cd $DOTFILES_PATH | :Explore <CR>"),
+      button("SPC e d", "  Dotfiles", ":cd $DOTFILES_PATH | :Telescope file_browser <CR>"),
     },
     opts = {
       spacing = 1,

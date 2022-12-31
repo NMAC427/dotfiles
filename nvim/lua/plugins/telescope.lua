@@ -2,11 +2,15 @@ local M = {
   "nvim-telescope/telescope.nvim",
   cmd = { "Telescope" },
   init = require("mappings").telescope,
+  dependencies = {
+    "nvim-telescope/telescope-file-browser.nvim",
+  },
 }
 
 function M.config()
   local actions = require("telescope.actions")
-  require("telescope").setup {
+  local telescope = require("telescope")
+  telescope.setup {
     defaults = {
       vimgrep_arguments = {
         "rg",
@@ -54,11 +58,16 @@ function M.config()
       -- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
       mappings = {
         i = {
-          ["<esc>"] = actions.close,
+          ["<esc><esc>"] = actions.close,
+        },
+        n = {
+          ["<esc><esc>"] = actions.close,
         },
       },
     },
   }
+
+  telescope.load_extension("file_browser")
 end
 
 return M
