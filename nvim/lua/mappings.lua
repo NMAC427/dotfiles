@@ -37,6 +37,10 @@ function M.misc()
   map("v", "<Leader>j", ":m '>+1<CR>gv=gv")
   map("v", "<Leader>k", ":m '<-2<CR>gv=gv")
 
+  -- Better Indenting
+  map("v", "<", "<gv")
+  map("v", ">", ">gv")
+
   -- TERMINAL --
   map("t", "<C-\\><esc>", "<C-\\><C-N>")
 end
