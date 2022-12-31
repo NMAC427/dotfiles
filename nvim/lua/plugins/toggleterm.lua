@@ -1,5 +1,6 @@
 local M = {
   "akinsho/toggleterm.nvim",
+  event = "VeryLazy",
   enabled = require("config").plugins.enable.toggleterm,
 }
 

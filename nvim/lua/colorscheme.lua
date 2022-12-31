@@ -2,34 +2,12 @@
 vim.g.background = "dark"
 
 -- Check if terminal supports truecolor
-local od_present, onedarkpro = pcall(require, "onedarkpro")
-if os.getenv("COLORTERM") == "truecolor" and od_present then
-  onedarkpro.setup {
-    colors = {},
-    plugins = {
-      all = false,
-      native_lsp = true,
-      packer = true,
-      nvim_cmp = true,
-      telescope = true,
-    },
-    styles = {
-      comments = "italic",
-    },
-    options = {
-      italic = true,
-      cursorline = true,
-    },
-
-    highlights = {
-      TabLine = { bg = "${bg_statusline}" },
-      TabLineSel = { bg = "${highlight}", fg = "${black}", style = "bold" },
-      TabLineFill = { bg = "${bg_statusline}" },
-    },
-  }
-
-  onedarkpro.load()
-  return
+if os.getenv("COLORTERM") == "truecolor" then
+  local od_present, onedarkpro = pcall(require, "onedarkpro")
+  if od_present then
+    onedarkpro.load()
+    return
+  end
 end
 
 -- fall back to 256 colors theme

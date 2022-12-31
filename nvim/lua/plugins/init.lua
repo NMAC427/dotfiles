@@ -62,6 +62,20 @@ return {
 
   {
     "olimorris/onedarkpro.nvim",
+    config = {
+      styles = {
+        comments = "italic",
+      },
+      options = {
+        italic = true,
+        cursorline = true,
+      },
+      highlights = {
+        TabLine = { bg = "${bg_statusline}" },
+        TabLineSel = { bg = "${highlight}", fg = "${black}", style = "bold" },
+        TabLineFill = { bg = "${bg_statusline}" },
+      },
+    },
     cond = function()
       return os.getenv("COLORTERM") == "truecolor"
     end,
