@@ -31,10 +31,20 @@ return {
         },
         indent = {
           enable = true,
-          disable = {},
+          disable = {
+            "html",
+          },
         },
       }
     end,
     enabled = require("config").plugins.enable.treesitter,
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    config = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 }
