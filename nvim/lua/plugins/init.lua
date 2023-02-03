@@ -58,6 +58,11 @@ return {
     event = "BufReadPre",
   },
 
+  {
+    "lambdalisue/suda.vim",
+    cmd = { "SudaRead", "SudaWrite" },
+  },
+
   -- Color Schemes
 
   {
