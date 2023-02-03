@@ -54,9 +54,10 @@
  :applications {:vi-editors ["^com\\.apple\\.Terminal$" 
                              "^com\\.googlecode\\.iterm2$"
                              "^net\\.kovidgoyal\\.kitty$"
-							 "^com\\.jetbrains\\.pycharm$"
-							 "^com\\.sublimetext\\.*"
-                             "^org\\.gnu\\.Emacs$"]}
+                             "^com\\.jetbrains\\.pycharm$"
+                             "^com\\.sublimetext\\.*"
+                             "^org\\.gnu\\.Emacs$"
+                             "^com\\.microsoft\\.VSCode$"]}
 
  ;; Main list of modifications
  ;; [<from> <to>] or
