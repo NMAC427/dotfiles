@@ -96,4 +96,5 @@ return {
   -- File Types
 
   "bfontaine/Brewfile.vim",
+  "mtikekar/vim-bsv",
 }
