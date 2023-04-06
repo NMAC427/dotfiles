@@ -4,6 +4,13 @@ return {
     build = ":TSUpdate",
     event = "BufReadPost",
     config = function()
+      -- Enable folding
+      vim.opt.foldlevel = 99
+      vim.opt.foldmethod = "expr"
+      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+      vim.opt.foldenable = false
+
+      -- Configure TS
       require("nvim-treesitter.configs").setup {
         ensure_installed = {
           "bash",
