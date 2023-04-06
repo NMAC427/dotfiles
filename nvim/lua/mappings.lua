@@ -56,4 +56,9 @@ function M.telescope()
   map("n", "<leader>fB", ":Telescope file_browser path=%:p:h <CR>")
 end
 
+function M.vscode()
+  map({ "n", "x", "o" }, "gc", "<Plug>VSCodeCommentary")
+  map("n", "gcc", "<Plug>VSCodeCommentaryLine")
+end
+
 return M

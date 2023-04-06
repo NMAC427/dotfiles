@@ -12,3 +12,7 @@ load_module("load_plugins")
 load_module("colorscheme")
 load_module("autocommands")
 load_module("filetype")
+
+if vim.g.vscode then
+  load_module("mappings").vscode()
+end

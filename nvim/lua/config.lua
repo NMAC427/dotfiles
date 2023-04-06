@@ -66,4 +66,28 @@ M.plugins = {
   },
 }
 
+-- VSCode specific configuration
+if vim.g.vscode then
+  local V = {}
+
+  V.plugins = {
+    enable = {
+      alpha = false,
+      autopairs = false,
+      better_escape = false,
+      bufferline = false,
+      cmp = false,
+      comment = false,
+      guess_indent = false,
+      indent_blankline = false,
+      lsp = false,
+      startuptime = false,
+      toggleterm = false,
+      treesitter = false,
+    },
+  }
+
+  M = vim.tbl_deep_extend("force", M, V)
+end
+
 return M
