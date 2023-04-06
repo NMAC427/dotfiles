@@ -18,6 +18,9 @@ __pycache__
 ehthumbs.db
 Thumbs.db
 
+# Icon must end with two \r
+Icon
+
 # XCode #
 #########
 xcuserdata/
