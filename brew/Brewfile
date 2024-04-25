@@ -26,7 +26,6 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "tunnelblick"
 cask "usb-overdrive"
-cask "authy"
 
 # Fonts
 cask "font-jetbrains-mono"

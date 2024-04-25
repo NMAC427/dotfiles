@@ -12,6 +12,42 @@ return {
   "nvim-lua/plenary.nvim",
   "nvim-tree/nvim-web-devicons",
 
+  "MunifTanjim/nui.nvim",
+  "rcarriga/nvim-notify",
+  {
+    "folke/noice.nvim",
+    config = function()
+      require("noice").setup {
+        -- add any options here
+      }
+    end,
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   config = function()
+  --
+  --     vim.opt.termguicolors = true
+  --
+  --     local notify = require("notify")
+  --     vim.notify = notify
+  --     print = function(...)
+  --         local print_safe_args = {}
+  --         local _ = { ... }
+  --         for i = 1, #_ do
+  --             table.insert(print_safe_args, tostring(_[i]))
+  --         end
+  --         notify(table.concat(print_safe_args, ' '), "info")
+  --     end
+  --     notify.setup()
+  --
+  --   end,
+  -- },
+
   {
     "NMAC427/guess-indent.nvim",
     dir = has_local_plugin("~/repos/guess-indent.nvim/"),

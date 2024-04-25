@@ -31,8 +31,8 @@ source $ZDOTDIR/plugins.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Load iTerm Integration; This is not very important so it can be placed towards the end of the file.
-if [[ -f $HOME/.iterm2_shell_integration.zsh ]] && [[ $LC_TERMINAL == iTerm2 ]]; then
-    source "$HOME/.iterm2_shell_integration.zsh"
+if [[ $LC_TERMINAL == iTerm2 ]]; then
+    test -e "${ZDOTDIR}/.iterm2_shell_integration.zsh" && source "${ZDOTDIR}/.iterm2_shell_integration.zsh"
 fi
 
 # Allow local customizations in the ~/.shell_local_after file

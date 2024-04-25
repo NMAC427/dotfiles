@@ -57,7 +57,9 @@
                              "^com\\.jetbrains\\.pycharm$"
                              "^com\\.sublimetext\\.*"
                              "^org\\.gnu\\.Emacs$"
-                             "^com\\.microsoft\\.VSCode$"]}
+                             "^com\\.microsoft\\.VSCode$"
+                             "^com\\.raycast\\.macos$"
+                             "^com\\.apple\\.dt\\.Xcode$"]}
 
  ;; Main list of modifications
  ;; [<from> <to>] or
