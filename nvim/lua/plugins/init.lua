@@ -61,10 +61,7 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertCharPre",
     config = {
-      mapping = { "jk" },
-      timeout = vim.o.timeoutlen,
-      clear_empty_lines = false,
-      keys = "<Esc>",
+      timeout = 333,
     },
     enabled = config.enable.better_escape,
   },
