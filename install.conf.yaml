@@ -30,6 +30,7 @@
         glob: true
         path: kitty/*
     ~/.config/lf/lfrc: lf/lfrc
+    ~/.config/macchina: macchina
     ~/.config/tmux: tmux
 
     ~/.unison/common: unison/common
