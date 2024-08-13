@@ -22,6 +22,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
 
+    ~/.config/aerospace: aerospace
     ~/.config/fd/ignore: git/gitignore
     ~/.config/ideavim/ideavimrc: jetbrains/ideavimrc
     ~/.config/iterm2/preferences: iterm
