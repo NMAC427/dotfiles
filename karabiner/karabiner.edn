@@ -59,7 +59,8 @@
                              "^org\\.gnu\\.Emacs$"
                              "^com\\.microsoft\\.VSCode$"
                              "^com\\.raycast\\.macos$"
-                             "^com\\.apple\\.dt\\.Xcode$"]}
+                             "^com\\.apple\\.dt\\.Xcode$"
+                             "^com\\.google\\.android\\.studio$"]}
 
  ;; Main list of modifications
  ;; [<from> <to>] or
@@ -69,7 +70,7 @@
  ;; <to> can be keywords defined in tos, keycodes without `{:not-to true}`, string (shell script)
  ;; <conditions> can be keywords defined in layers, devices, applications
  ;; <other options> {:other {:parameters {:to_delayed_action_delay_milliseconds 100 :basic.to_if_alone_timeout_milliseconds 500 :basic.to_if_held_down_threshold_milliseconds 250}} }
- :main [{:des "Caps Lock to escape / control in terminal or emacs"
+ :main [{:des "Caps Lock to escape / control in terminal or vi editors"
          :rules [[:caps_lock :left_control :vi-editors {:alone :escape}]]}
 
         {:des "PtrSc to alt"

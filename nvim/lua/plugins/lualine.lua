@@ -2,7 +2,11 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   config = {
-    options = {
+    options = vim.g.vscode and {
+      icons_enabled = false,
+      component_separators = { left = "|", right = "|" },
+      section_separators = { left = "|", right = "|" },
+    } or {
       icons_enabled = true,
       theme = "auto",
       component_separators = { left = "", right = "" },

@@ -1,4 +1,4 @@
-# Place a copy of this config to ~/.aerospace.toml
+
 # After that, you can edit ~/.aerospace.toml to your liking
 
 # It's not necessary to copy all keys to your config.
@@ -15,7 +15,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -58,6 +58,11 @@ outer.left =       0
 outer.bottom =     0
 outer.top =        0
 outer.right =      0
+
+[[on-window-detected]]
+if.app-id = "com.apple.iphonesimulator"
+check-further-callbacks = true
+run = 'layout floating'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -209,3 +214,43 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+# Colemak-DH ISO mapping
+[key-mapping.key-notation-to-key-code]
+  q = 'q'
+  w = 'w'
+  f = 'e'
+  p = 'r'
+  b = 't'
+  j = 'y'
+  l = 'u'
+  u = 'i'
+  y = 'o'
+  semicolon = 'p'
+  leftSquareBracket = 'leftSquareBracket'
+  rightSquareBracket = 'rightSquareBracket'
+  backslash = 'backslash'
+
+  a = 'a'
+  r = 's'
+  s = 'd'
+  t = 'f'
+  g = 'g'
+  m = 'h'
+  n = 'j'
+  e = 'k'
+  i = 'l'
+  o = 'semicolon'
+  quote = 'quote'
+
+  z = 'backtick'
+  x = 'z'
+  c = 'x'
+  d = 'c'
+  v = 'v'
+  backtick = 'b'
+  k = 'n'
+  h = 'm'
+  comma = 'comma'
+  period = 'period'
+  slash = 'slash'
